@@ -1,0 +1,27 @@
+<%- include("header") -%>
+    <!-- <% if(listTitle === "Saturday" || listTitle==="Sunday"){ %>
+        <h1 style="color:purple">It's a <%=listTitle%></h1>
+    <% }else{ %>
+        <h1 style="color:blue">It's a <%=listTitle%></h1>
+    <% } %> -->
+    <div class="box" id="heading">
+        <h1>It's a <%=listTitle%>
+        </h1>
+    </div>
+
+    <div class="box">
+        <%Array.from(newListItem).forEach((data)=>{%>
+            <div class="item">
+                <input type="checkbox">
+                <p>
+                    <%=data%>
+                </p>
+            </div>
+            <%});%>
+                <form class="" action="/" method="post">
+                    <input type="text" name="newItem" id="newItem" placeholder="New Item">
+                    <button type="submit" name="list" value=<%=listTitle%>>+</button>
+                </form>
+    </div>
+
+<%- include("footer") -%>
