@@ -2,22 +2,17 @@ const express = require('express');
 const bodyParser = require('body-parser');
 
 const app = express();
+const date = require(__dirname+'/date.js');
+
+console.log(date());
 var items = ["Buy Food", "Cook Food","Eat Food"];
 var workItems = [];
 app.set('view engine','ejs');
 app.use(express.static("public")); 
 app.use(bodyParser.urlencoded({extended:true}));
 app.get('/',function(req,res){
-    const date = new Date();
-    const today = date.getDay();
-    // const days=['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'];
-    var options = {
-        weekday: "long",
-        day:"numeric",
-        month:"long"
-    };
-    var day = date.toLocaleDateString("en-US",options);
-    res.render('list',{listTitle:day,newListItem:items});
+    
+    res.render('list',{listTitle:date(),newListItem:items});
 });
 
 app.post('/',function (req,res){
