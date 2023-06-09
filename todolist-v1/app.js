@@ -4,10 +4,12 @@ const bodyParser = require('body-parser');
 const app = express();
 const date = require(__dirname+'/date.js');
 
-console.log(date());
+
 var items = ["Buy Food", "Cook Food","Eat Food"];
 var workItems = [];
+
 app.set('view engine','ejs');
+
 app.use(express.static("public")); 
 app.use(bodyParser.urlencoded({extended:true}));
 app.get('/',function(req,res){

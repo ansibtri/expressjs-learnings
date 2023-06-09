@@ -1,0 +1,11 @@
+{
+  "name": "anish",
+  "version": "1.0.0",
+  "description": "its a amazing package",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "anish",
+  "license": "ISC"
+}
