@@ -1,0 +1,13 @@
+<%- include('partials/header'); -%>
+    <h1>Posts</h1>
+    <% if(post != null){%>
+        <h4>
+            <%=post.title%>
+        </h4>
+        <p>
+            <%=post.description%>
+        </p>
+        <% }else{%>
+            <h4>No posts available</h4>
+        <%}%>
+<%- include('partials/footer'); -%>
